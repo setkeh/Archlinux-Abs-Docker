@@ -1,4 +1,4 @@
-#Dockerfile for Spinning up Archweb Instances.
+#Dockerfile for Spinning up ABS Instances.
 FROM base/archlinux:latest
 MAINTAINER Setkeh "setkeh@gmail.com"
 
@@ -26,4 +26,4 @@ RUN mkdir -p /home/docker/abs
 RUN chown -R docker:users /home/docker
 
 # Update ABS
-#RUN abs
+RUN abs
