@@ -16,10 +16,14 @@ RUN pacman -S zsh abs --noconfirm
 RUN useradd -m -d /home/docker -p docker docker
 
 # Add Some Default Configs
-ADD home /home/docker/
+ADD home.tgz /tmp/home.tgz
+RUN tar -xvf /tmp/home.tgz -C /home/docker
+RUN cp -r /home/docker/home/. /home/docker/
+RUN rm -rf /tmp/home.tgz
+RUN rm -rf /home/docker/home
 RUN chsh -s /bin/zsh docker
 RUN mkdir -p /home/docker/abs
 RUN chown -R docker:users /home/docker
 
 # Update ABS
-RUN abs
+#RUN abs
