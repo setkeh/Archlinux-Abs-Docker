@@ -16,7 +16,6 @@ RUN pacman -S zsh abs git --noconfirm
 RUN useradd -m -d /home/docker -p docker docker
 
 # Add Some Default Configs
-ADD home.tgz /tmp/home.tgz
 RUN git clone https://github.com/setkeh/Docker-Home.git /home/docker/
 RUN chsh -s /bin/zsh docker
 RUN mkdir -p /home/docker/abs
