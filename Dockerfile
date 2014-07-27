@@ -10,7 +10,7 @@ RUN pacman-key --populate archlinux
 RUN pacman -Syu --noconfirm --ignore filesystem
 
 # Install The Utils we need
-RUN pacman -S zsh abs --noconfirm
+RUN pacman -S zsh abs git --noconfirm
 
 # Now Setup a User.
 RUN useradd -m -d /home/docker -p docker docker
