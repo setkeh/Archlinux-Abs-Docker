@@ -17,7 +17,9 @@ RUN useradd -m -d /home/docker -p docker docker
 
 # Add Some Default Configs
 RUN git clone https://github.com/setkeh/Docker-Home.git /tmp/home/
-RUN cp -r /tmp/home/.* /home/docker
+RUN cp -r /tmp/home/.vim/ /home/docker/.vim/
+RUN cp -r /tmp/home/.vimrc /home/docker/.vimrc
+RUN cp -r /tmp/home/.zshrc /home/docker.zshrc
 RUN rm -rf /tmp/home/
 RUN chsh -s /bin/zsh docker
 RUN mkdir -p /home/docker/abs
